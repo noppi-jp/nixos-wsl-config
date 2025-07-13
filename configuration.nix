@@ -66,6 +66,8 @@
       defaultEditor = true;
     };
 
+    nix-ld.enable = true;
+
     tmux = {
       enable = true;
       terminal = "tmux-256color";
