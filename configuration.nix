@@ -24,13 +24,36 @@
   environment.systemPackages = with pkgs; [
     docker-buildx
     docker-compose
-    #emacs
+    emacs
     fastfetch
     file
     p7zip
     ripgrep
     wget
   ];
+
+  fonts = {
+    enableDefaultPackages = true;
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Noto Serif CJK JP" ];
+        sansSerif = [ "Noto Sans CJK JP" ];
+        monospace = [ "HackGen" ];
+      };
+    };
+
+    packages = with pkgs; [
+      font-awesome
+      hackgen-font
+      nerd-fonts.symbols-only
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      roboto
+    ];
+  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ja_JP.UTF-8";

@@ -62,6 +62,9 @@
                       ;; 行番号を表示する
                       global-display-line-numbers-mode))
 
+(leaf theme
+  :config (load-theme 'tango-dark))
+
 (leaf autorevert
   :doc "revert buffers when files on disk change"
   :tag "builtin"
@@ -105,10 +108,25 @@
 ;  :ensure t
 ;  :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
 
+(leaf auto-complete
+  :ensure t
+  :global-minor-mode global-auto-complete-mode)
+
+;(leaf ac-slime
+;  :ensure t
+;  :hook ((slime-mode-hook . set-up-slime-ac)
+;         (slime-repl-mode-hook . set-up-slime-ac)))
+
+;(leaf ac-geiser
+;  :ensure t
+;  :hook ((geiser-mode-hook . ac-geiser-setup)
+;         (geiser-repl-mode-hook . ac-geiser-setup))
+;  :config (add-to-list 'ac-modes 'geiser-repl-mode))
+
 (leaf font-setting
   :config
   (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
-  (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil)
+  (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
   (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))
 
 (leaf ace-jump-mode

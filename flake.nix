@@ -16,7 +16,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ... }: {
+  outputs = { nixpkgs, nixos-wsl, home-manager, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

@@ -7,7 +7,7 @@
 
     # link the configuration file in current directory to the specified location in
     # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-    # file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
+    file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
 
     # link all files in `./scripts` to `~/.config/i3/scripts`
     # home.file.".config/i3/scripts" = {
