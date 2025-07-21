@@ -29,6 +29,7 @@
     file
     p7zip
     ripgrep
+    sbcl
     wget
   ];
 
