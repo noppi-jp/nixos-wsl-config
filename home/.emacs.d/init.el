@@ -112,10 +112,10 @@
   :ensure t
   :global-minor-mode global-auto-complete-mode)
 
-;(leaf ac-slime
-;  :ensure t
-;  :hook ((slime-mode-hook . set-up-slime-ac)
-;         (slime-repl-mode-hook . set-up-slime-ac)))
+(leaf ac-slime
+  :ensure t
+  :hook ((slime-mode-hook . set-up-slime-ac)
+         (slime-repl-mode-hook . set-up-slime-ac)))
 
 ;(leaf ac-geiser
 ;  :ensure t
@@ -313,8 +313,8 @@
   :hook ((csv-mode-hook . rainbow-csv-mode)
          (tsv-mode-hook . rainbow-csv-mode)))
 
-;(leaf slime
-;  :ensure t
-;  :custom (inferior-lisp-program . "~/lw-console.exe"))
+(leaf slime
+  :ensure t
+  :custom (inferior-lisp-program . "sbcl"))
 
 (provide 'init)
