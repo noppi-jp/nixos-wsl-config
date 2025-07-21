@@ -5,7 +5,7 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -31,29 +31,6 @@
     ripgrep
     wget
   ];
-
-  fonts = {
-    enableDefaultPackages = true;
-
-    fontconfig = {
-      defaultFonts = {
-        serif = [ "Noto Serif CJK JP" ];
-        sansSerif = [ "Noto Sans CJK JP" ];
-        monospace = [ "HackGen" ];
-      };
-    };
-
-    packages = with pkgs; [
-      font-awesome
-      hackgen-font
-      nerd-fonts.symbols-only
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-      roboto
-    ];
-  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ja_JP.UTF-8";
