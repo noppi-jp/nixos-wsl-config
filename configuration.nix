@@ -77,13 +77,7 @@
       historyLimit = 10000;
       escapeTime = 10;
       clock24 = true;
-      extraConfig = ''
-        set-option -g status-right-length 60
-        set-option -g status-right "\"#{=30:pane_title}\" %Y/%m/%d (%a) %H:%M"
-
-        set-option -g focus-events on
-        set-option -sa terminal-features ",$TERM:RGB"
-      '';
+      extraConfig = builtins.readFile ./home/.config/tmux/tmux.conf;
     };
   };
 
@@ -102,7 +96,7 @@
   time.timeZone = "Asia/Tokyo";
 
   users = {
-    # Define a user account. Don't forget to set a password with ‘passwd’.
+    # Define a user account. Don't forget to set a password with `passwd'.
     users.nixos = {
       group = "nixos";
       extraGroups = [ "wheel" "docker" ];
