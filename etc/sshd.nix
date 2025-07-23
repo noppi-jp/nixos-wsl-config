@@ -1,0 +1,4 @@
+{
+    PasswordAuthentication = false;
+    KbdInteractiveAuthentication = false;
+}

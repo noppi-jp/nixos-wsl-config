@@ -71,10 +71,7 @@
     # Enable the OpenSSH daemon.
     openssh = {
       enable = true;
-      settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-      };
+      settings = import ./etc/sshd.nix;
     };
   };
 
