@@ -44,13 +44,7 @@
   #   enableSSHSupport = true;
   # };
   programs = {
-    bash.shellAliases = {
-      ls = "ls --color=auto -F";
-      grep = "grep --color=auto";
-      less = "less -i";
-      fastfetch = "fastfetch -l 'nixos_old'";
-      emacs = "emacs -nw";
-    };
+    bash.shellAliases = import ./home/.config/bash-aliases.nix;
 
     git = {
       enable = true;
