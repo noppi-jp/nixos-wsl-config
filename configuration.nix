@@ -27,6 +27,7 @@
     emacs
     fastfetch
     file
+    openssl
     p7zip
     ripgrep
     sbcl
