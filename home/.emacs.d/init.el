@@ -24,7 +24,7 @@
 (leaf cus-start
   :doc "define customization properties of builtins"
   :tag "builtin" "internal"
-  :bind ("C-h" . 'delete-backward-char) ; シェルに合わせるため、C-hは後退に割り当てる
+  :bind ("C-h" . 'puni-backward-delete-char) ; シェルに合わせるため、C-hは後退に割り当てる
   :custom `((create-lockfiles . nil)
             (tab-width . 4)
             (frame-resize-pixelwise . t)
@@ -316,5 +316,30 @@
 (leaf slime
   :ensure t
   :custom (inferior-lisp-program . "sbcl"))
+
+(leaf puni
+  :doc "Parentheses Universalistic"
+  :ensure t
+  :global-minor-mode puni-global-mode
+  :bind (puni-mode-map
+         ;; default mapping
+         ;; ("C-M-f" . puni-forward-sexp)
+         ;; ("C-M-b" . puni-backward-sexp)
+         ;; ("C-M-a" . puni-beginning-of-sexp)
+         ;; ("C-M-e" . puni-end-of-sexp)
+         ;; ("M-)" . puni-syntactic-forward-punct)
+         ;; ("C-M-u" . backward-up-list)
+         ;; ("C-M-d" . backward-down-list)
+         ("C-)" . puni-slurp-forward)
+         ("C-}" . puni-barf-forward)
+         ("M-(" . puni-wrap-round)
+         ("M-s" . puni-splice)
+         ("M-r" . puni-raise)
+         ("M-U" . puni-splice-killing-backward)
+         ("M-z" . puni-squeeze))
+  :config
+  (leaf elec-pair
+    :doc "Automatic parenthesis pairing"
+    :global-minor-mode electric-pair-mode))
 
 (provide 'init)
