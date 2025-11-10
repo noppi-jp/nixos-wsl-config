@@ -335,8 +335,8 @@
          ("M-(" . puni-wrap-round)
          ("M-s" . puni-splice)
          ("M-r" . puni-raise)
-         ("M-U" . puni-splice-killing-backward)
-         ("M-z" . puni-squeeze))
+         ;; ("M-z" . puni-squeeze)
+         ("M-U" . puni-splice-killing-backward))
   :config
   (leaf elec-pair
     :doc "Automatic parenthesis pairing"
