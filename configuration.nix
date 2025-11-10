@@ -31,7 +31,9 @@
     p7zip
     ripgrep
     sbcl
+    unzip
     wget
+    zip
   ];
 
   # Select internationalisation properties.
