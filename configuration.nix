@@ -64,6 +64,7 @@
 
     neovim = {
       enable = true;
+      defaultEditor = true;
     };
 
     nix-ld.enable = true;
@@ -80,7 +81,6 @@
 
     emacs = {
       enable = true;
-      defaultEditor = true;
       package = pkgs.emacs-nox;
     };
   };
