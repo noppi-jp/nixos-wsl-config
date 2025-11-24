@@ -24,7 +24,6 @@
   environment.systemPackages = with pkgs; [
     docker-buildx
     docker-compose
-    emacs
     fastfetch
     file
     openssl
@@ -65,7 +64,6 @@
 
     neovim = {
       enable = true;
-      defaultEditor = true;
     };
 
     nix-ld.enable = true;
@@ -78,6 +76,12 @@
     openssh = {
       enable = true;
       settings = import ./etc/sshd.nix;
+    };
+
+    emacs = {
+      enable = true;
+      defaultEditor = true;
+      package = pkgs.emacs-nox;
     };
   };
 
