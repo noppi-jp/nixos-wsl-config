@@ -81,7 +81,12 @@
 
     emacs = {
       enable = true;
-      package = pkgs.emacs-nox;
+      package = with pkgs; (
+        (emacsPackagesFor emacs-nox).emacsWithPackages (
+          epkgs: [ epkgs.corfu
+                   epkgs.corfu-terminal ]
+        )
+      );
     };
   };
 
