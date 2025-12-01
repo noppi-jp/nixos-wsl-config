@@ -108,22 +108,22 @@
 ;  :ensure t
 ;  :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
 
-(leaf auto-complete
-  :ensure t
-  :hook ((lisp-mode-hook . (lambda ()
-                             (corfu-mode nil)
-                             (auto-complete-mode t)))
-         (slime-lisp-mode-hook . (lambda ()
-                                   (corfu-mode nil)
-                                   (auto-complete-mode t)))
-         (slime-repl-mode-hook . (lambda ()
-                                   (corfu-mode nil)
-                                   (auto-complete-mode t)))))
+;; (leaf auto-complete
+;;   :ensure t
+;;   :hook ((lisp-mode-hook . (lambda ()
+;;                              (corfu-mode nil)
+;;                              (auto-complete-mode t)))
+;;          (slime-lisp-mode-hook . (lambda ()
+;;                                    (corfu-mode nil)
+;;                                    (auto-complete-mode t)))
+;;          (slime-repl-mode-hook . (lambda ()
+;;                                    (corfu-mode nil)
+;;                                    (auto-complete-mode t)))))
 
-(leaf ac-slime
-  :ensure t
-  :hook ((slime-mode-hook . set-up-slime-ac)
-         (slime-repl-mode-hook . set-up-slime-ac)))
+;; (leaf ac-slime
+;;   :ensure t
+;;   :hook ((slime-mode-hook . set-up-slime-ac)
+;;          (slime-repl-mode-hook . set-up-slime-ac)))
 
 ;(leaf ac-geiser
 ;  :ensure t
