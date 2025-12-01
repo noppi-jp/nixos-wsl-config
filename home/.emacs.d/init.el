@@ -292,7 +292,7 @@
   :doc "COmpletion in Region FUnction"
   ;;  :ensure t
   :custom (corfu-auto . t)
-  :global-minor-mode global-corfu-mode corfu-popupinfo-mode
+  :global-minor-mode global-corfu-mode
   :custom ((tab-always-indent . 'complete)
            (text-mode-ispell-word-completion . nil)
            (read-extended-command-predicate . #'command-completion-default-include-p)))
