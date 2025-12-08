@@ -3,5 +3,5 @@
     grep = "grep --color=auto";
     less = "less -i";
     fastfetch = "fastfetch -l 'nixos_old'";
-    emacs = "emacseditor";
+    iconvsu = "iconv -f CP932 -t UTF-8//TRANSLIT";
 }
