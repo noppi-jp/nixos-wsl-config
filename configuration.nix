@@ -19,21 +19,25 @@
     useWindowsDriver = true;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    docker-buildx
-    docker-compose
-    fastfetch
-    file
-    openssl
-    p7zip
-    ripgrep
-    sbcl
-    unzip
-    wget
-    zip
-  ];
+  environment = {
+    localBinInPath = true;
+
+    # List packages installed in system profile. To search, run:
+    # $ nix search wget
+    systemPackages = with pkgs; [
+      docker-buildx
+      docker-compose
+      fastfetch
+      file
+      openssl
+      p7zip
+      ripgrep
+      sbcl
+      unzip
+      wget
+      zip
+    ];
+  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ja_JP.UTF-8";

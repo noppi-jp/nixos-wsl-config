@@ -1,0 +1,2 @@
+#!/bin/bash
+tail -f "$1" | while read LINE ; do echo "$LINE" | iconv -f CP932 -t UTF-8//TRANSLIT ; done
