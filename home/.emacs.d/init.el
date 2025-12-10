@@ -62,11 +62,6 @@
                       ;; 行番号を表示する
                       global-display-line-numbers-mode))
 
-(leaf char-encoding
-  :config
-  (set-language-environment "Japanese")
-  (prefer-coding-system 'utf-8))
-
 (leaf theme
   :config (load-theme 'tango-dark))
 
