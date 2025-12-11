@@ -122,6 +122,16 @@
            (ace-jump-word-mode-use-query-char . nil))
   :config (setq ace-jump-mode-move-keys (append "asdfghjkl;:]qwertyuiop@zxcvbnm,." nil)))
 
+(leaf puni-kill-region-kai
+  :preface
+  (defun puni-kill-region--kill-word-or-kill-region (orig-fun &rest args)
+    "範囲選択していない時、C-wで前の単語を削除"
+    (if (and (called-interactively-p :any) transient-mark-mode (not mark-active))
+        (puni-backward-kill-word)
+      (apply orig-fun args)))
+  :advice
+  (:around puni-kill-region puni-kill-region--kill-word-or-kill-region))
+
 (leaf other-window
   :tag "builtin"
   :bind ("M-o" . other-window))
