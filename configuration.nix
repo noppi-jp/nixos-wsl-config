@@ -42,6 +42,22 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "ja_JP.UTF-8";
 
+  nix = {
+    # Perform garbage collection weekly to maintain low disk usage
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+
+    # Optimize storage
+    # You can also manually optimize the store via:
+    #    nix-store --optimize
+    # Fefer to the following link for more details:
+    # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimize-store
+    settings.auto-optimise-store = true;
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
