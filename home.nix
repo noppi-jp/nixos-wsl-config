@@ -8,6 +8,7 @@
     # link the configuration file in current directory to the specified location in
     # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
     file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
+    file.".slynk.lisp".source = ./home/.slynk.lisp;
     file.".local/bin/tailsu" = {
       source = ./home/.local/bin/tailsu;
       executable = true;
