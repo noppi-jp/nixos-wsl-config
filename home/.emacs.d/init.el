@@ -106,13 +106,14 @@
 
 ;(leaf geiser-chez
 ;  :ensure t
-;  :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
+;  :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe")
+;  :config (modify-coding-system-alist 'process "scheme" 'utf-8))
 
 ;(leaf font-setting
-;  :config
-;  (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
-;  (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
-;  (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))
+;  :config (progn
+;            (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
+;            (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
+;            (add-to-list 'default-frame-alist '(font . "fontset-HackGen"))))
 
 (leaf ace-jump-mode
   :defvar ace-jump-mode-move-keys
@@ -277,14 +278,14 @@
 
 (leaf corfu
   :doc "COmpletion in Region FUnction"
-  ;;  :ensure t
+  :ensure t
   :custom (corfu-auto . t)
   :global-minor-mode global-corfu-mode
   :custom ((tab-always-indent . 'complete)
            (text-mode-ispell-word-completion . nil)
            (read-extended-command-predicate . #'command-completion-default-include-p)))
-  ;;  :bind ((corfu-map
-  ;;          ("C-s" . corfu-insert-separator))))
+;; :bind ((corfu-map
+;;         ("C-s" . corfu-insert-separator))))
 
 (leaf corfu-terminal
   :custom (corfu-terminal-mode . t))

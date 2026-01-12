@@ -28,6 +28,9 @@
       docker-buildx
       docker-compose
       fastfetch
+      ((emacsPackagesFor emacs-nox).emacsWithPackages (
+         epkgs: [ epkgs.corfu-terminal ]
+      ))
       file
       openssl
       p7zip
@@ -97,16 +100,6 @@
     openssh = {
       enable = true;
       settings = import ./etc/sshd.nix;
-    };
-
-    emacs = {
-      enable = true;
-      package = with pkgs; (
-        (emacsPackagesFor emacs-nox).emacsWithPackages (
-          epkgs: [ epkgs.corfu
-                   epkgs.corfu-terminal ]
-        )
-      );
     };
   };
 
