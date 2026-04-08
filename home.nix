@@ -57,6 +57,8 @@
     neovim = {
       enable = true;
       extraConfig = builtins.readFile ./home/.config/nvim/init.vim;
+      withRuby = false;
+      withPython3 = false;
     };
 
     # vscode = {
