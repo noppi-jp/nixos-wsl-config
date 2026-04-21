@@ -54,6 +54,22 @@
       };
     };
 
+    jujutsu = {
+        enable = true;
+        settings = {
+            user = {
+                name = "Noppi";
+                email = "noppi@noppi.jp";
+            };
+            ui = {
+                editor = "nvim";
+                merge-editor = "vscode";
+            };
+            revsets.bookmark-advance-to = "closest_pushable(@)";
+            revset-aliases."closest_pushable(to)" = "heads(::to & mutable() & ~description(exact:\"\") & (~empty() | merges()))";
+        };
+    };
+
     neovim = {
       enable = true;
       extraConfig = builtins.readFile ./home/.config/nvim/init.vim;
