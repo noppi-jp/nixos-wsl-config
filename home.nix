@@ -68,6 +68,7 @@
             revsets.bookmark-advance-to = "closest_pushable(@)";
             revset-aliases."closest_pushable(to)" = "heads(::to & mutable() & ~description(exact:\"\") & (~empty() | merges()))";
             git.colocate = false;
+            template-aliases."format_short_signature(signature)" = "signature.name()";
         };
     };
 
