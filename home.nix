@@ -46,10 +46,10 @@
       enable = true;
       signing.format = null;
       settings = {
-        user = {
-          name = "Noppi";
-          email = "noppi@noppi.jp";
-        };
+#        user = {
+#          name = "Noppi";
+#          email = "noppi@noppi.jp";
+#        };
         push.default = "nothing";
       };
     };
@@ -57,10 +57,10 @@
     jujutsu = {
         enable = true;
         settings = {
-            user = {
-                name = "Noppi";
-                email = "noppi@noppi.jp";
-            };
+#            user = {
+#                name = "Noppi";
+#                email = "noppi@noppi.jp";
+#            };
             ui = {
                 editor = "nvim";
                 merge-editor = "vscode";
