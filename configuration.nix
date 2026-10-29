@@ -76,7 +76,6 @@
 
     git = {
       enable = true;
-#      lfs.enable = true;
 
       config = {
         core.quotePath = false;
