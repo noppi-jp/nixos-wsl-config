@@ -29,9 +29,6 @@
       docker-compose
       emacs-nox
       fastfetch
-      #((emacsPackagesFor emacs-nox).emacsWithPackages (
-      #   epkgs: [ epkgs.corfu-terminal ]
-      #))
       file
       openssl
       p7zip

@@ -287,9 +287,6 @@
 ;; :bind ((corfu-map
 ;;         ("C-s" . corfu-insert-separator))))
 
-;; (leaf corfu-terminal
-;;   :custom (corfu-terminal-mode . t))
-
 (leaf cape
   :doc "Completion At Point Extensions"
   :ensure t
