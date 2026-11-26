@@ -63,7 +63,8 @@
                       global-display-line-numbers-mode))
 
 (leaf theme
-  :config (load-theme 'tango-dark))
+  :config (progn (load-theme 'modus-operandi)
+                 (set-face-attribute 'minibuffer-prompt nil :foreground "dark green")))
 
 (leaf autorevert
   :doc "revert buffers when files on disk change"
